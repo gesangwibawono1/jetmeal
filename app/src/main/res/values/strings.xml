@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">JetMeal</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_profile">Profile</string>
+    <string name="placeholder_search">Search meal!</string>
+    <string name="no_result_search">No Available Meal!</string>
+    <string name="price">$%d</string>
+    <string name="back">Back</string>
+    <string name="share_message">Share All Favorites</string>
+    <string name="no_favorites">No Available Favorites!</string>
+    <string name="favorite_meals">Favorite Meals</string>
+    <string name="label_name">Name</string>
+    <string name="name">Gesang Wibawono</string>
+    <string name="label_email">Email</string>
+    <string name="email">gesangwibawono1@gmail.com</string>
+    <string name="btn_github">See GitHub</string>
+</resources>

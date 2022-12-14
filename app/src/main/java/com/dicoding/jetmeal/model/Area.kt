@@ -1,0 +1,46 @@
+package com.dicoding.jetmeal.model
+
+enum class Area(val areaName: String) {
+    AMERICAN(
+         "American"
+    ),
+    BRITISH(
+         "British"
+    ),
+    CANADIAN(
+         "Canadian"
+    ),
+    CHINESE(
+         "Chinese"
+    ),
+    FRENCH(
+         "French"
+    ),
+    INDIAN(
+         "Indian"
+    ),
+    ITALIAN(
+         "Italian"
+    ),
+    JAPANESE(
+         "Japanese"
+    ),
+    MALAYSIAN(
+        "Malaysian"
+    ),
+    MEXICAN(
+         "Mexican"
+    ),
+    RUSSIAN(
+         "Russian"
+    ),
+    SPANISH(
+         "Spanish"
+    ),
+    THAI(
+         "Thai"
+    ),
+    TUNISIAN(
+        "Tunisian"
+    ),
+}
