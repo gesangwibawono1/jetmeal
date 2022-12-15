@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -26,30 +25,25 @@ fun DetailMealScreen(
         )
     ),
     navigateBack: () -> Unit,
-    navigateToCart: () -> Unit,
+    navigateToFavorite: () -> Unit,
 ) {
-    val myId = "52910"
-    Column() {
-        Text(text = "from param: $mealId")
-        Text(text = "from myId: $myId")
-        viewModel.uiState.collectAsState(initial = UiState.Loading).value.let { uiState ->
-            when (uiState) {
-                is UiState.Loading -> {
-                    viewModel.getMealDetailById(id = myId)
-                }
-                is UiState.Success -> {
-                    val data = uiState.data
-                    DetailMealContent(
-                        mealDetail = data,
-                        onBackClick = navigateBack,
-                        onFavoriteToggle = {
-                            viewModel.addOrRemoveFavoriteById(id = data.id)
-                            navigateToCart()
-                        }
-                    )
-                }
-                is UiState.Error -> {}
+    viewModel.uiState.collectAsState(initial = UiState.Loading).value.let { uiState ->
+        when (uiState) {
+            is UiState.Loading -> {
+                viewModel.getMealDetailById(id = mealId)
             }
+            is UiState.Success -> {
+                val data = uiState.data
+                DetailMealContent(
+                    mealDetail = data,
+                    onBackClick = navigateBack,
+                    onFavoriteToggle = {
+                        viewModel.addOrRemoveFavoriteById(id = data.id)
+                        navigateToFavorite()
+                    }
+                )
+            }
+            is UiState.Error -> {}
         }
     }
 }

@@ -26,7 +26,7 @@ import com.dicoding.jetmeal.ui.navigation.NavigationItem
 import com.dicoding.jetmeal.ui.navigation.Screen
 import com.dicoding.jetmeal.ui.screen.detail.DetailMealScreen
 import com.dicoding.jetmeal.ui.screen.favorites.FavoritesScreen
-import com.dicoding.jetmeal.ui.screen.profile.ProfileScreen
+import com.dicoding.jetmeal.ui.screen.about.AboutScreen
 import com.dicoding.jetmeal.ui.screen.search.SearchScreen
 import com.dicoding.jetmeal.ui.theme.JetMealTheme
 
@@ -68,8 +68,8 @@ fun JetMealApp(
                     },
                 )
             }
-            composable(Screen.Profile.route) {
-                ProfileScreen()
+            composable(Screen.About.route) {
+                AboutScreen()
             }
             composable(
                 route = Screen.DetailMeal.route,
@@ -81,7 +81,7 @@ fun JetMealApp(
                     navigateBack = {
                         navController.navigateUp()
                     },
-                    navigateToCart = {
+                    navigateToFavorite = {
                         navController.popBackStack()
                         navController.navigate(Screen.Favorites.route) {
                             popUpTo(navController.graph.findStartDestination().id) {
@@ -120,9 +120,9 @@ private fun BottomBar(
                 screen = Screen.Favorites
             ),
             NavigationItem(
-                title = stringResource(R.string.menu_profile),
+                title = stringResource(R.string.menu_about),
                 icon = Icons.Default.AccountCircle,
-                screen = Screen.Profile
+                screen = Screen.About
             ),
         )
         BottomNavigation {

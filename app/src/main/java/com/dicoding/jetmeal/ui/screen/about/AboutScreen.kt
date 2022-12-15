@@ -1,4 +1,4 @@
-package com.dicoding.jetmeal.ui.screen.profile
+package com.dicoding.jetmeal.ui.screen.about
 
 import android.content.Intent
 import android.net.Uri
@@ -28,14 +28,14 @@ import com.dicoding.jetmeal.ui.components.SectionText
 import com.dicoding.jetmeal.ui.theme.JetMealTheme
 
 @Composable
-fun ProfileScreen() {
-    ProfileContent(
+fun AboutScreen() {
+    AboutContent(
         modifier = Modifier,
     )
 }
 
 @Composable
-fun ProfileContent(
+fun AboutContent(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -46,7 +46,7 @@ fun ProfileContent(
     ) {
         TopAppBar(backgroundColor = MaterialTheme.colors.surface) {
             Text(
-                text = stringResource(R.string.menu_profile),
+                text = stringResource(R.string.menu_about),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 12.dp),
@@ -106,9 +106,9 @@ fun ProfileContent(
 
 @Composable
 @Preview(showBackground = true)
-fun ProfileContentPreview() {
+fun AboutContentPreview() {
     JetMealTheme {
-        ProfileContent(
+        AboutContent(
             modifier = Modifier,
         )
     }

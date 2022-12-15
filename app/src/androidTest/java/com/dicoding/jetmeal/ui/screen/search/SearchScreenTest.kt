@@ -13,8 +13,8 @@ class SearchScreenTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
-    val matchKeyword = "Beef"
-    val unmatchKeyword = "Sausage"
+    private val matchKeyword = "Beef"
+    private val unmatchKeyword = "Sausage"
 
     @Before
     fun setUp() {

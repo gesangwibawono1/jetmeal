@@ -48,8 +48,8 @@ class JetMealAppTest {
     fun navHost_bottomNavigation_working() {
         composeTestRule.onNodeWithStringId(R.string.menu_favorites).performClick()
         navController.assertCurrentRouteName(Screen.Favorites.route)
-        composeTestRule.onNodeWithStringId(R.string.menu_profile).performClick()
-        navController.assertCurrentRouteName(Screen.Profile.route)
+        composeTestRule.onNodeWithStringId(R.string.menu_about).performClick()
+        navController.assertCurrentRouteName(Screen.About.route)
         composeTestRule.onNodeWithStringId(R.string.menu_search).performClick()
         navController.assertCurrentRouteName(Screen.Search.route)
     }

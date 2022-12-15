@@ -1,5 +1,9 @@
 package com.dicoding.jetmeal.model
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.LocalDateTime
+
 data class MealDetail(
     val id: String,
     val name: String,
@@ -11,4 +15,7 @@ data class MealDetail(
     val category: Category,
     val ingredients: List<Ingredient>,
     val instruction: String,
-)
+) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    var updatedAt = LocalDateTime.now()
+}
